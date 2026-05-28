@@ -773,7 +773,7 @@ footer .logo{font-family:'Caveat',cursive;color:var(--yellow);font-size:1.5rem}
         <input type="hidden" name="_subject" value="New Portfolio Message!"/>
         <input type="hidden" name="_captcha" value="false"/>
         <input type="hidden" name="_template" value="table"/>
-        <input type="hidden" name="_next" value="https://vedantpande0704-cloud.github.io/ved-portfolio/">
+       
         <label for="cf-name">Your name</label>
         <input id="cf-name" name="name" type="text" required placeholder="What should I call you?"/>
         <label for="cf-email">Your email</label>
@@ -970,7 +970,7 @@ form.addEventListener('submit', async e=>{
   e.preventDefault();
   const btn=document.getElementById('sendBtn');
   const old=btn.textContent;
-  btn.disabled=true; btn.style.pointerEvents = 'none'; btn.textContent='Sending... ⏳';
+  btn.disabled=true; btn.textContent='Sending... ⏳';
   try{
     const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
     if(res.ok){
