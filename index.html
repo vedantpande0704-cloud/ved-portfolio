@@ -1,862 +1,1065 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Vedant Pande — BBA Graduate · Marketer · Entrepreneur</title>
-<meta name="description" content="Portfolio of Vedant Pande — marketer, entrepreneur and researcher. 30+ events led, published research on AR in retail, BIZNOVA fest director." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@500;700;900&family=Fredoka+One&family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Vedant Pande — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Fredoka+One&family=Patrick+Hand&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --paper:#f5f0e8;
+  --paper2:#fffdf4;
+  --paper3:#fef9ec;
+  --kraft:#e8d9b5;
+  --ink:#1a1a2e;
+  --ink-light:#3a3a5c;
+  --blue:#3b82f6;
+  --blue-dark:#1d4ed8;
+  --blue-light:#dbeafe;
+  --yellow:#fde047;
+  --yellow-dark:#ca8a04;
+  --yellow-light:#fef9c3;
+  --green:#4ade80;
+  --green-dark:#16a34a;
+  --red:#f87171;
+  --red-dark:#dc2626;
+  --orange:#fb923c;
+  --purple:#a78bfa;
+  --pink:#f9a8d4;
+  --teal:#2dd4bf;
+  --white:#fff;
+  --shadow-paper:3px 4px 12px rgba(0,0,0,0.15);
+  --shadow-lift:5px 8px 20px rgba(0,0,0,0.18);
+  --border-ink:2px solid var(--ink);
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Nunito',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+}
+
+/* ═══ PAPER TEXTURE ═══ */
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(0,0,0,0.04) 27px,rgba(0,0,0,0.04) 28px),
+    repeating-linear-gradient(90deg,transparent,transparent 27px,rgba(0,0,0,0.02) 27px,rgba(0,0,0,0.02) 28px);
+  pointer-events:none;z-index:0;
+}
+
+/* ═══ NAV ═══ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  background:var(--blue-dark);
+  height:58px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 4vw;
+  box-shadow:0 3px 0 var(--ink);
+}
+.nav-logo{
+  font-family:'Caveat',cursive;
+  font-size:1.7rem;font-weight:700;
+  color:var(--yellow);
+  text-decoration:none;
+}
+.nav-links{display:flex;gap:0.3rem;list-style:none;}
+.nav-links a{
+  font-family:'Fredoka One',cursive;
+  font-size:0.85rem;letter-spacing:0.05em;
+  color:rgba(255,255,255,0.85);
+  text-decoration:none;
+  padding:0.3rem 0.8rem;
+  border-radius:20px;
+  border:1.5px solid transparent;
+  transition:all 0.15s;
+}
+.nav-links a:hover{background:var(--yellow);color:var(--ink);border-color:var(--ink);}
+
+/* ═══ PAGE ═══ */
+.page{
+  position:relative;z-index:1;
+  max-width:980px;
+  margin:0 auto;
+  padding:5rem 2.5rem 4rem;
+}
+
+/* ═══ SECTION TAPE LABEL ═══ */
+.tape-label{
+  display:inline-block;
+  background:var(--blue);
+  color:var(--white);
+  font-family:'Fredoka One',cursive;
+  font-size:1.3rem;
+  letter-spacing:0.06em;
+  padding:0.35rem 1.5rem;
+  border-radius:8px;
+  box-shadow:3px 3px 0 rgba(0,0,0,0.25);
+  margin-bottom:1.5rem;
+  position:relative;
+}
+.tape-label.yellow-tape{background:var(--yellow);color:var(--ink);}
+.tape-label.green-tape{background:var(--green-dark);color:var(--white);}
+.tape-label.red-tape{background:var(--red-dark);color:var(--white);}
+.tape-label.purple-tape{background:#7c3aed;color:var(--white);}
+
+/* ═══ PAPER CLIP DECO ═══ */
+.clip{
+  display:inline-block;
+  width:14px;height:38px;
+  border:3.5px solid #999;
+  border-radius:7px 7px 0 0;
+  border-bottom:none;
+  position:absolute;
+  top:-20px;left:18px;
+  background:transparent;
+}
+.clip::after{
+  content:'';
+  position:absolute;
+  top:4px;left:50%;
+  transform:translateX(-50%);
+  width:6px;height:22px;
+  border:3px solid #999;
+  border-radius:4px 4px 0 0;
+  border-bottom:none;
+}
+
+/* ═══ WASHI TAPE ═══ */
+.washi{
+  position:absolute;
+  height:22px;
+  opacity:0.75;
+  border-radius:2px;
+  z-index:5;
+}
+
+/* ═══ STICKY NOTE ═══ */
+.sticky{
+  background:var(--yellow-light);
+  border:1.5px solid rgba(0,0,0,0.1);
+  border-radius:2px;
+  padding:1rem 1.1rem;
+  box-shadow:3px 4px 10px rgba(0,0,0,0.12);
+  font-family:'Caveat',cursive;
+  font-size:1rem;
+  position:relative;
+}
+.sticky::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:6px;
+  background:rgba(0,0,0,0.06);
+  border-radius:2px 2px 0 0;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 1 — HERO / ABOUT ME
+═══════════════════════════════════════ */
+#hero{padding-top:5.5rem;}
+
+.hero-layout{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:2rem;
+  align-items:start;
+}
+
+/* ID CARD */
+.id-card{
+  background:var(--white);
+  border-radius:16px;
+  border:2px solid rgba(0,0,0,0.12);
+  box-shadow:var(--shadow-lift);
+  overflow:hidden;
+  position:relative;
+}
+.id-card-top{
+  background:var(--blue-dark);
+  padding:0.6rem 1rem 0.5rem;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.id-dot{width:8px;height:8px;border-radius:50%;}
+.id-logo{
+  font-family:'Fredoka One',cursive;
+  font-size:0.9rem;
+  color:var(--white);
+  letter-spacing:0.08em;
+  margin-left:auto;
+}
+.id-photo-zone{
+  background:var(--paper);
+  margin:1rem;
+  border-radius:10px;
+  height:170px;
+  border:2px dashed rgba(0,0,0,0.2);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:0.4rem;
+  overflow:hidden;
+  position:relative;
+}
+.id-photo-zone img{
+  width:100%;height:100%;
+  object-fit:cover;
+  border-radius:8px;
+  display:none; /* shown via JS if loaded */
+}
+.photo-placeholder{
+  font-size:2.5rem;
+  opacity:0.3;
+}
+.photo-hint{
+  font-size:0.7rem;font-weight:700;
+  color:rgba(0,0,0,0.3);
+  text-align:center;line-height:1.4;
+}
+.id-contact{padding:0 1rem 1rem;}
+.id-name{
+  font-family:'Caveat',cursive;
+  font-size:1.4rem;font-weight:700;
+  color:var(--ink);
+  margin-bottom:0.8rem;
+  padding-bottom:0.5rem;
+  border-bottom:2px dashed rgba(0,0,0,0.1);
+}
+.id-row{
+  display:flex;align-items:center;gap:0.5rem;
+  font-size:0.75rem;font-weight:700;
+  color:var(--ink-light);
+  margin-bottom:0.5rem;
+}
+.id-icon{font-size:0.9rem;}
+.id-row a{color:var(--ink-light);text-decoration:none;}
+
+/* RIGHT ABOUT PANEL */
+.about-right{display:flex;flex-direction:column;gap:1.5rem;}
+
+.name-card{
+  background:var(--white);
+  border-radius:12px;
+  padding:1.4rem 1.6rem;
+  box-shadow:var(--shadow-paper);
+  border:1.5px solid rgba(0,0,0,0.08);
+  position:relative;
+}
+.name-hello{
+  font-family:'Caveat',cursive;
+  font-size:1rem;font-weight:600;
+  color:var(--blue);
+  margin-bottom:0.2rem;
+}
+.name-big{
+  font-family:'Caveat',cursive;
+  font-size:2.6rem;font-weight:700;
+  color:var(--ink);
+  line-height:1;
+  margin-bottom:0.8rem;
+}
+.name-big .highlight{
+  background:var(--yellow);
+  padding:0 0.3rem;
+  border-radius:4px;
+}
+.about-body{
+  font-size:0.88rem;font-weight:600;
+  color:var(--ink-light);
+  line-height:1.75;
+}
+.about-body strong{color:var(--ink);}
+
+/* TABS on right of name card */
+.side-tabs{
+  position:absolute;
+  right:-3px;top:20px;
+  display:flex;flex-direction:column;gap:6px;
+}
+.side-tab{
+  width:28px;height:50px;
+  border-radius:0 8px 8px 0;
+  border:1.5px solid rgba(0,0,0,0.15);
+  border-left:none;
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.55rem;font-weight:900;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  color:var(--white);
+  cursor:pointer;
+}
+
+.dont-forget{
+  background:var(--yellow-light);
+  border:1.5px solid rgba(0,0,0,0.1);
+  border-radius:8px;
+  padding:0.6rem 1rem;
+  font-family:'Caveat',cursive;
+  font-size:1rem;font-weight:600;
+  color:var(--ink);
+  display:flex;align-items:center;gap:0.5rem;
+  box-shadow:2px 3px 8px rgba(0,0,0,0.1);
+  transform:rotate(-1deg);
+}
+
+/* ═══ STRIPE DIVIDER ═══ */
+.ruled-divider{
+  margin:2.5rem 0;
+  position:relative;
+}
+.ruled-divider::before{
+  content:'';
+  display:block;
+  height:2px;
+  background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 12px,transparent 12px,transparent 18px);
+  opacity:0.5;
+  margin-bottom:6px;
+}
+.ruled-divider::after{
+  content:'';
+  display:block;
+  height:2px;
+  background:repeating-linear-gradient(90deg,var(--blue) 0,var(--blue) 6px,transparent 6px,transparent 18px);
+  opacity:0.25;
+}
+.ruled-label{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  background:var(--paper);
+  padding:0 1rem;
+  font-family:'Fredoka One',cursive;
+  font-size:0.9rem;letter-spacing:0.1em;
+  color:var(--blue);
+}
+
+/* ═══════════════════════════════════════
+   SECTION 2 — EDUCATION + SKILLS
+═══════════════════════════════════════ */
+.edu-skills-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  align-items:start;
+}
+
+/* CLIPBOARD */
+.clipboard{
+  background:var(--kraft);
+  border-radius:12px 12px 8px 8px;
+  border:2px solid rgba(0,0,0,0.2);
+  box-shadow:var(--shadow-lift);
+  position:relative;
+  padding-top:1.2rem;
+}
+.clipboard-clip{
+  position:absolute;top:-18px;left:50%;transform:translateX(-50%);
+  width:52px;height:28px;
+  background:#bbb;
+  border-radius:6px 6px 0 0;
+  border:2.5px solid #888;
+  box-shadow:0 -2px 6px rgba(0,0,0,0.2);
+}
+.clipboard-clip::after{
+  content:'';
+  position:absolute;
+  top:5px;left:50%;transform:translateX(-50%);
+  width:30px;height:14px;
+  background:#ccc;
+  border-radius:4px 4px 0 0;
+  border:2px solid #aaa;
+}
+.clipboard-paper{
+  background:var(--white);
+  margin:0 0.8rem 0.8rem;
+  border-radius:4px;
+  padding:1.2rem 1.3rem;
+  border:1px solid rgba(0,0,0,0.1);
+  position:relative;
+  overflow:hidden;
+}
+.clipboard-paper::before{
+  content:'';
+  position:absolute;top:0;left:0;bottom:0;width:32px;
+  background:rgba(230,180,180,0.2);
+  border-right:2px solid rgba(220,100,100,0.3);
+}
+.paper-line{
+  padding-bottom:0.55rem;
+  margin-bottom:0.55rem;
+  border-bottom:1px solid rgba(59,130,246,0.2);
+  padding-left:36px;
+  position:relative;
+}
+.paper-line:last-child{border-bottom:none;margin-bottom:0;}
+.edu-year{
+  font-family:'Caveat',cursive;
+  font-size:0.82rem;font-weight:600;
+  color:var(--blue);
+  margin-bottom:0.1rem;
+}
+.edu-school{
+  font-size:0.88rem;font-weight:800;
+  color:var(--ink);
+  line-height:1.3;
+}
+.edu-degree{
+  font-size:0.76rem;font-weight:600;
+  color:var(--ink-light);
+  margin-top:0.1rem;
+}
+.edu-grade{
+  display:inline-block;
+  background:var(--yellow);
+  color:var(--ink);
+  font-size:0.65rem;font-weight:900;
+  letter-spacing:0.06em;
+  padding:0.1rem 0.45rem;
+  border-radius:4px;
+  margin-top:0.2rem;
+}
+
+/* SKILLS */
+.skills-box{
+  background:var(--white);
+  border-radius:12px;
+  border:1.5px solid rgba(0,0,0,0.1);
+  box-shadow:var(--shadow-paper);
+  padding:1.4rem;
+}
+.skills-section{margin-bottom:1.3rem;}
+.skills-section:last-child{margin-bottom:0;}
+.skill-group-title{
+  font-family:'Fredoka One',cursive;
+  font-size:0.95rem;
+  color:var(--ink);
+  margin-bottom:0.6rem;
+  display:flex;align-items:center;gap:0.4rem;
+}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.45rem;}
+.s-tag{
+  font-family:'Patrick Hand',cursive;
+  font-size:0.82rem;
+  padding:0.3rem 0.8rem;
+  border-radius:20px;
+  font-weight:600;
+  border:2px solid rgba(0,0,0,0.15);
+  box-shadow:2px 2px 0 rgba(0,0,0,0.1);
+}
+.tag-blue{background:var(--blue-light);color:var(--blue-dark);}
+.tag-yellow{background:var(--yellow-light);color:#92400e;}
+.tag-green{background:#dcfce7;color:var(--green-dark);}
+.tag-purple{background:#ede9fe;color:#6d28d9;}
+.tag-red{background:#fee2e2;color:var(--red-dark);}
+.tag-orange{background:#ffedd5;color:#c2410c;}
+.tag-teal{background:#ccfbf1;color:#0f766e;}
+.tag-pink{background:#fce7f3;color:#be185d;}
+
+/* ═══════════════════════════════════════
+   SECTION 3 — EXPERIENCE
+═══════════════════════════════════════ */
+.exp-notebook{
+  background:var(--white);
+  border-radius:12px;
+  border:1.5px solid rgba(0,0,0,0.1);
+  box-shadow:var(--shadow-lift);
+  overflow:hidden;
+}
+.exp-header-row{
+  background:var(--blue-dark);
+  color:var(--white);
+  padding:0.8rem 1.4rem;
+  display:flex;align-items:center;gap:0.75rem;
+  font-family:'Fredoka One',cursive;
+  font-size:1rem;letter-spacing:0.06em;
+}
+.exp-entry{
+  display:grid;
+  grid-template-columns:160px 1fr;
+  border-bottom:1.5px solid rgba(0,0,0,0.07);
+  transition:background 0.15s;
+}
+.exp-entry:last-child{border-bottom:none;}
+.exp-entry:hover{background:var(--paper3);}
+.exp-left{
+  background:var(--paper);
+  border-right:2px dashed rgba(0,0,0,0.1);
+  padding:1.2rem 1rem;
+  display:flex;flex-direction:column;gap:0.5rem;
+}
+.exp-date-tag{
+  background:var(--blue-dark);
+  color:var(--white);
+  font-family:'Patrick Hand',cursive;
+  font-size:0.72rem;
+  padding:0.2rem 0.55rem;
+  border-radius:4px;
+  display:inline-block;
+  font-weight:600;
+}
+.exp-co-name{
+  font-family:'Caveat',cursive;
+  font-size:1.3rem;font-weight:700;
+  color:var(--ink);
+  line-height:1.1;
+}
+.exp-badge{
+  display:inline-block;
+  font-size:0.65rem;font-weight:900;
+  letter-spacing:0.06em;text-transform:uppercase;
+  padding:0.15rem 0.5rem;
+  border-radius:4px;
+}
+.exp-right{padding:1.2rem 1.4rem;}
+.exp-role-title{
+  font-family:'Fredoka One',cursive;
+  font-size:1rem;color:var(--ink);
+  margin-bottom:0.6rem;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.exp-pts{list-style:none;}
+.exp-pts li{
+  font-size:0.83rem;font-weight:600;
+  color:var(--ink-light);
+  line-height:1.65;
+  padding:0.18rem 0 0.18rem 1.3rem;
+  position:relative;
+}
+.exp-pts li::before{
+  content:'→';
+  position:absolute;left:0;
+  color:var(--blue);font-size:0.75rem;
+  top:0.3rem;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 4 — ACHIEVEMENTS
+═══════════════════════════════════════ */
+.ach-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1.2rem;
+}
+.ach-note{
+  background:var(--white);
+  border-radius:10px;
+  border:1.5px solid rgba(0,0,0,0.08);
+  box-shadow:var(--shadow-paper);
+  overflow:hidden;
+  transition:transform 0.15s,box-shadow 0.15s;
+  position:relative;
+}
+.ach-note:hover{transform:translateY(-4px) rotate(0.5deg);box-shadow:var(--shadow-lift);}
+.ach-note-top{height:7px;}
+.ach-note-body{padding:1rem 1.1rem 1.2rem;}
+.ach-icon{font-size:1.6rem;display:block;margin-bottom:0.4rem;}
+.ach-yr{
+  font-family:'Patrick Hand',cursive;
+  font-size:0.7rem;font-weight:600;
+  letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:0.35rem;
+  opacity:0.7;
+}
+.ach-title{
+  font-family:'Caveat',cursive;
+  font-size:1.05rem;font-weight:700;
+  color:var(--ink);
+  margin-bottom:0.35rem;
+  line-height:1.2;
+}
+.ach-desc{
+  font-size:0.77rem;font-weight:600;
+  color:var(--ink-light);
+  line-height:1.55;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 5 — CONTACT
+═══════════════════════════════════════ */
+.contact-scrap{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  align-items:start;
+}
+.contact-card{
+  background:var(--white);
+  border-radius:12px;
+  border:1.5px solid rgba(0,0,0,0.1);
+  box-shadow:var(--shadow-lift);
+  padding:2rem;
+  position:relative;
+}
+.contact-title{
+  font-family:'Caveat',cursive;
+  font-size:1.9rem;font-weight:700;
+  color:var(--ink);
+  margin-bottom:0.5rem;
+  line-height:1.1;
+}
+.contact-sub{
+  font-size:0.85rem;font-weight:600;
+  color:var(--ink-light);
+  margin-bottom:1.4rem;
+}
+.c-row{
+  display:flex;align-items:center;gap:0.7rem;
+  font-size:0.83rem;font-weight:700;
+  color:var(--ink);
+  text-decoration:none;
+  background:var(--paper);
+  border:1.5px solid rgba(0,0,0,0.1);
+  border-radius:8px;
+  padding:0.55rem 0.9rem;
+  margin-bottom:0.65rem;
+  transition:background 0.15s,transform 0.1s;
+}
+.c-row:hover{background:var(--yellow-light);transform:translateX(3px);}
+.c-row-icon{font-size:1rem;}
+
+/* FORM */
+.contact-form-card{
+  background:var(--white);
+  border-radius:12px;
+  border:1.5px solid rgba(0,0,0,0.1);
+  box-shadow:var(--shadow-lift);
+  overflow:hidden;
+}
+.form-top{
+  background:var(--yellow);
+  padding:0.8rem 1.4rem;
+  font-family:'Caveat',cursive;
+  font-size:1.2rem;font-weight:700;
+  color:var(--ink);
+  border-bottom:2px solid rgba(0,0,0,0.12);
+}
+.form-body{padding:1.4rem;}
+.fg{margin-bottom:1rem;}
+.fg label{
+  display:block;
+  font-size:0.7rem;font-weight:900;
+  letter-spacing:0.12em;text-transform:uppercase;
+  color:#777;margin-bottom:0.35rem;
+}
+.fg input,.fg textarea{
+  width:100%;
+  border:2px solid rgba(0,0,0,0.15);
+  border-radius:8px;
+  padding:0.65rem 0.85rem;
+  font-family:'Nunito',sans-serif;
+  font-size:0.88rem;font-weight:600;
+  color:var(--ink);
+  background:var(--paper);
+  outline:none;
+  transition:border-color 0.15s,box-shadow 0.15s;
+}
+.fg input:focus,.fg textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(59,130,246,0.12);
+  background:var(--white);
+}
+.fg textarea{height:100px;resize:none;}
+.btn-send{
+  width:100%;
+  background:var(--blue-dark);
+  color:var(--white);
+  border:2px solid var(--ink);
+  border-radius:8px;
+  box-shadow:3px 3px 0 rgba(0,0,0,0.2);
+  font-family:'Fredoka One',cursive;
+  font-size:1rem;letter-spacing:0.06em;
+  padding:0.75rem;
+  cursor:pointer;
+  transition:transform 0.1s,box-shadow 0.1s;
+}
+.btn-send:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 rgba(0,0,0,0.25);}
+.btn-send:active{transform:translate(2px,2px);box-shadow:1px 1px 0 rgba(0,0,0,0.2);}
+.btn-send:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+
+/* FORM SUCCESS */
+.form-success{display:none;text-align:center;padding:3rem 1rem;}
+.fs-icon{font-size:3rem;display:block;margin-bottom:0.8rem;}
+.fs-title{
+  font-family:'Caveat',cursive;
+  font-size:1.6rem;font-weight:700;
+  color:var(--ink);margin-bottom:0.4rem;
+}
+.fs-sub{font-size:0.85rem;font-weight:600;color:var(--ink-light);}
+
+/* ═══ FOOTER ═══ */
+.site-footer{
+  background:var(--ink);
+  border-top:3px solid var(--blue-dark);
+  padding:1.4rem 4vw;
+  display:flex;justify-content:space-between;align-items:center;
+  position:relative;z-index:1;
+}
+.site-footer p{font-size:0.78rem;font-weight:700;color:rgba(255,255,255,0.5);}
+.footer-logo{
+  font-family:'Caveat',cursive;
+  font-size:1.3rem;font-weight:700;
+  color:var(--yellow);
+}
+
+/* ═══ REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-l{opacity:0;transform:translateX(-22px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal-l.in{opacity:1;transform:translateX(0);}
+.reveal-r{opacity:0;transform:translateX(22px);transition:opacity 0.55s ease,transform 0.55s ease;}
+.reveal-r.in{opacity:1;transform:translateX(0);}
+
+@media(max-width:700px){
+  .hero-layout,.edu-skills-grid,.contact-scrap{grid-template-columns:1fr;}
+  .exp-entry{grid-template-columns:1fr;}
+  .exp-left{border-right:none;border-bottom:2px dashed rgba(0,0,0,0.1);}
+}
+</style>
 </head>
 <body>
 
-<div id="progress"></div>
-
-<div id="cursor-outer"></div>
-<div id="cursor-dot"></div>
-
-<nav id="nav">
-  <a href="#hero" class="logo">VP.</a>
-  
-  <ul id="navList">
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">✏️ Vedant Pande</a>
+  <ul class="nav-links">
     <li><a href="#hero">About</a></li>
     <li><a href="#edu">Education</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#achievements">Wins</a></li>
-    <li><a href="#projects">Work</a></li>
-    <li><a href="#courses">Courses</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  
-  <div class="nav-controls">
-    <button class="uiverse" id="colorFlipperBtn" aria-label="Change Theme">
-      <div class="wrapper">
-        <span>🎨 THEME</span>
-        <div class="circle circle-12"></div>
-        <div class="circle circle-11"></div>
-        <div class="circle circle-10"></div>
-        <div class="circle circle-9"></div>
-        <div class="circle circle-8"></div>
-        <div class="circle circle-7"></div>
-        <div class="circle circle-6"></div>
-        <div class="circle circle-5"></div>
-        <div class="circle circle-4"></div>
-        <div class="circle circle-3"></div>
-        <div class="circle circle-2"></div>
-        <div class="circle circle-1"></div>
-      </div>
-    </button>
-    
-    <button class="hamburger" id="hbBtn" aria-label="Menu">☰</button>
-  </div>
 </nav>
 
-<main>
+<!-- ═══════════════════════ PAGE ═══════════════════════ -->
+<div class="page" id="hero">
 
-<section id="hero">
-  <div class="polaroid-wrapper">
-    <div class="polaroid-tape"></div>
-    <div class="polaroid">
-      <img src="vedantphoto.png" alt="Vedant Pande"/>
-      <div class="polaroid-caption handwriting">Vedant Pande · 2026</div>
+  <!-- ABOUT ME label -->
+  <div class="reveal" style="text-align:right;margin-bottom:1rem;">
+    <span class="tape-label">about me</span>
+  </div>
+
+  <div class="hero-layout reveal">
+
+    <!-- ID CARD (LEFT) -->
+    <div class="id-card">
+      <div class="id-card-top">
+        <div class="id-dot" style="background:#f87171;"></div>
+        <div class="id-dot" style="background:#fde047;"></div>
+        <div class="id-dot" style="background:#4ade80;"></div>
+        <div class="id-logo">VP · 2025</div>
+      </div>
+
+      <!-- Photo zone — user can replace the placeholder -->
+      <div class="id-photo-zone" id="photo-zone">
+        <img src="vedantphoto.jpeg" alt="" srcset=""></div>
+
+      <div class="id-contact">
+        <div class="id-name">Vedant Pande ✦</div>
+        <div class="id-row"><span class="id-icon">📞</span> +91 78208 94823</div>
+        <div class="id-row"><span class="id-icon">📧</span><a href="mailto:vedantpande0704@gmail.com">vedant.pande<br/>.cat2025@gmail.com</a></div>
+        <div class="id-row"><span class="id-icon">🎂</span> BBA Graduate · 2025</div>
+        <div class="id-row"><span class="id-icon">📍</span> Khamgaon, Maharashtra</div>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="about-right">
+
+      <div class="name-card" style="position:relative;">
+        <div class="name-hello">Hello there! 👋</div>
+        <div class="name-big">Vedant <span class="highlight">Pande</span></div>
+        <p class="about-body">
+          I got excited about marketing and business since college — and quickly realized it was my passion. I have led <strong>30+ events</strong> as E-Cell Coordinator, published <strong>solo research</strong> on AR in retail, directed a multi-college fest with <strong>150+ participants</strong>, and raised <strong>₹52,000</strong> for an IIT Bombay bootcamp.<br/><br/>
+          I am always learning, exploring new ideas and applying my skills to create practical, impressive results for the people I work with.
+        </p>
+
+        <!-- SIDE TABS like reference -->
+        <div class="side-tabs">
+          <div class="side-tab" style="background:#3b82f6;">About</div>
+          <div class="side-tab" style="background:#22c55e;">Skills</div>
+          <div class="side-tab" style="background:#f59e0b;">Work</div>
+          <div class="side-tab" style="background:#ef4444;">Wins</div>
+        </div>
+      </div>
+
+      <!-- Don't forget sticky -->
+      <div class="dont-forget" style="align-self:flex-start;">
+        🌟 Don't forget to contact me! &nbsp;
+        <span style="font-size:0.8rem;opacity:0.6;">let's talk!</span>
+      </div>
+
+      <!-- Quick skill stickers -->
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+        <span class="s-tag tag-blue">📧 Email Automation</span>
+        <span class="s-tag tag-yellow">🔍 Market Research</span>
+        <span class="s-tag tag-green">✍️ SEO Content</span>
+        <span class="s-tag tag-purple">🚀 B2B Lead Gen</span>
+        <span class="s-tag tag-red">👥 Team Leadership</span>
+        <span class="s-tag tag-teal">📊 Brevo · Upwork</span>
+      </div>
+
     </div>
   </div>
 
-  <div class="hero-right">
-    <div class="hero-card hard-shadow">
-      <div class="hi">Hello there! 👋</div>
-      <h1 class="hero-name">Vedant <span class="hl">PANDE</span></h1>
-      <p class="hero-bio">I got excited about marketing and business since college — and quickly realized it was my passion. I have led 30+ events, participated in 18+ more, published solo research on AR in retail, directed a multi-college fest with 250+ participants, and raised ₹52,000 for an IIT Bombay bootcamp.</p>
-      
-      <div class="hero-actions">
-        <a href="https://docs.google.com/document/d/1heGO1lIgz7IrvO_qCM-1R4EzxKGx37bb7vQA1GVIBss/edit?usp=sharing" target="_blank" rel="noopener" class="resume-btn">
-          📄 View / Download Resume
-        </a>
-        <div class="sticky-note">Don't forget to contact me! 🌟</div>
+  <!-- RULED DIVIDER -->
+  <div class="ruled-divider"><span class="ruled-label">✦ ✦ ✦</span></div>
+
+  <!-- ═══ EDUCATION + SKILLS ═══ -->
+  <div id="edu" style="padding-top:1rem;">
+    <div style="display:flex;gap:1rem;align-items:center;margin-bottom:1.5rem;" class="reveal">
+      <span class="tape-label yellow-tape">Education</span>
+      <span class="tape-label green-tape">Skill</span>
+    </div>
+
+    <div class="edu-skills-grid">
+      <!-- CLIPBOARD EDUCATION -->
+      <div class="clipboard reveal-l">
+        <div class="clipboard-clip"></div>
+        <div class="clipboard-paper">
+          <div class="paper-line">
+            <div class="edu-year">2022 – 2025</div>
+            <div class="edu-school">Saraswati College, Shegaon</div>
+            <div class="edu-degree">BBA — Bachelor of Business Administration</div>
+            <span class="edu-grade">CGPA 7.19 / 10</span>
+          </div>
+          <div class="paper-line">
+            <div class="edu-year">2022</div>
+            <div class="edu-school">A. K. National High School, Khamgaon</div>
+            <div class="edu-degree">HSC — XII Standard</div>
+            <span class="edu-grade">77.17 %</span>
+          </div>
+          <div class="paper-line">
+            <div class="edu-year">2020</div>
+            <div class="edu-school">Kela Hindi School, Khamgaon</div>
+            <div class="edu-degree">SSC — X Standard</div>
+            <span class="edu-grade">86.4 %</span>
+          </div>
+          <div class="paper-line">
+            <div class="edu-year">2024</div>
+            <div class="edu-school">IJFMR — Research Publication</div>
+            <div class="edu-degree">Impact of AR on Retail Marketing (Solo Author)</div>
+            <span class="edu-grade">Published ✓</span>
+          </div>
+        </div>
       </div>
-      
-      <div class="skills-row">
-        <span class="sticker s1">📧 Email Automation</span>
-        <span class="sticker s2">🔍 Market Research</span>
-        <span class="sticker s3">✍️ SEO Content</span>
-        <span class="sticker s4">🚀 B2B Lead Gen</span>
-        <span class="sticker s5">👥 Team Leadership</span>
-        <span class="sticker s6">📊 Brevo · Upwork</span>
+
+      <!-- SKILLS BOX -->
+      <div class="skills-box reveal-r">
+        <div class="skills-section">
+          <div class="skill-group-title">💼 Hard Skills</div>
+          <div class="skill-tags">
+            <span class="s-tag tag-blue">Email Marketing (Brevo)</span>
+            <span class="s-tag tag-green">Market Research</span>
+            <span class="s-tag tag-yellow">SEO Content Writing</span>
+            <span class="s-tag tag-purple">B2B Lead Generation</span>
+            <span class="s-tag tag-orange">Upwork / Freelancer</span>
+            <span class="s-tag tag-teal">Fiverr SEO</span>
+            <span class="s-tag tag-blue">Google Docs / Sheets</span>
+            <span class="s-tag tag-red">Social Media Creatives</span>
+          </div>
+        </div>
+        <div class="skills-section">
+          <div class="skill-group-title">🧠 Soft Skills</div>
+          <div class="skill-tags">
+            <span class="s-tag tag-purple">Team Leadership</span>
+            <span class="s-tag tag-pink">Emotional Resilience</span>
+            <span class="s-tag tag-green">Collaboration</span>
+            <span class="s-tag tag-yellow">Event Management</span>
+            <span class="s-tag tag-teal">Public Outreach</span>
+          </div>
+        </div>
+        <div class="skills-section">
+          <div class="skill-group-title">🎨 Hobbies</div>
+          <div class="skill-tags">
+            <span class="s-tag tag-orange">🎲 Rubik's Cube</span>
+            <span class="s-tag tag-pink">🎨 Drawing</span>
+            <span class="s-tag tag-blue">📚 Research</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</section>
 
-</main>
+  <!-- RULED DIVIDER -->
+  <div class="ruled-divider"><span class="ruled-label">✦ ✦ ✦</span></div>
 
-<div class="marquee"><div class="marquee-track" id="mqTrack"></div></div>
-
-<main>
-
-<section style="padding-top:2rem">
-  <div class="stats">
-    <div class="stat hard-shadow reveal"><div class="stat-num" data-target="30" data-suffix="+">0</div><div class="stat-lbl">Events Led</div></div>
-    <div class="stat hard-shadow reveal"><div class="stat-num" data-target="18" data-suffix="+">0</div><div class="stat-lbl">Events Participated</div></div>
-    <div class="stat hard-shadow reveal"><div class="stat-num" data-target="250" data-suffix="+">0</div><div class="stat-lbl">Fest Participants</div></div>
-    <div class="stat hard-shadow reveal"><div class="stat-num" data-target="52" data-prefix="₹" data-suffix="K">0</div><div class="stat-lbl">Raised · IIT Bombay</div></div>
-    <div class="stat hard-shadow reveal"><div class="stat-num" data-target="1" data-suffix="">0</div><div class="stat-lbl">Solo Publication</div></div>
-  </div>
-</section>
-
-<div class="ruled-divider"><span>✦ ✦ ✦</span></div>
-
-<section id="edu">
-  <div class="tape-row">
-    <span class="tape yellow">Education 📚</span>
-    <span class="tape green">My Toolkit 🛠️</span>
-  </div>
-  <div class="edu-grid">
-    <div class="clipboard hard-shadow reveal-l">
-      <div class="clip"></div>
-      <div class="clip-paper">
-        <div class="edu-entry">
-          <div class="edu-year">2022–2025</div>
-          <div class="edu-school">Saraswati College, Shegaon</div>
-          <div class="edu-degree">BBA — Bachelor of Business Administration</div>
-          <div class="edu-grade">CGPA 7.19 / 10</div>
-        </div>
-        <div class="edu-entry">
-          <div class="edu-year">2022</div>
-          <div class="edu-school">A.K. National High School, Khamgaon</div>
-          <div class="edu-degree">HSC — XII Standard</div>
-          <div class="edu-grade">77.17 %</div>
-        </div>
-        <div class="edu-entry">
-          <div class="edu-year">2020</div>
-          <div class="edu-school">Kela Hindi School, Khamgaon</div>
-          <div class="edu-degree">SSC — X Standard</div>
-          <div class="edu-grade">86.4 %</div>
-        </div>
-        <div class="edu-entry">
-          <div class="edu-year">2024</div>
-          <div class="edu-school">IJFMR — Research Publication</div>
-          <div class="edu-degree">"Impact of AR on Retail Marketing" (Solo Author)</div>
-          <div class="edu-grade">Published ✓</div>
-        </div>
-      </div>
+  <!-- ═══ EXPERIENCE ═══ -->
+  <div id="experience" style="padding-top:1rem;">
+    <div class="reveal" style="margin-bottom:1.5rem;">
+      <span class="tape-label red-tape">Experience</span>
     </div>
 
-    <div class="skill-box hard-shadow reveal-r">
-      <h4>🛠 Hard Skills</h4>
-      <div class="skill-tags">
-        <span class="skill-tag hard">Email Marketing (Brevo)</span>
-        <span class="skill-tag hard">Market Research</span>
-        <span class="skill-tag hard">SEO Content Writing</span>
-        <span class="skill-tag hard">B2B Lead Generation</span>
-        <span class="skill-tag hard">Upwork / Freelancer</span>
-        <span class="skill-tag hard">Fiverr SEO</span>
-        <span class="skill-tag hard">Google Docs / Sheets</span>
-        <span class="skill-tag hard">Social Media Creatives</span>
+    <div class="exp-notebook reveal">
+      <div class="exp-header-row">
+        <span>📋</span> Work Experience — Field Operations
       </div>
-      <h4>💚 Soft Skills</h4>
-      <div class="skill-tags">
-        <span class="skill-tag soft">Team Leadership</span>
-        <span class="skill-tag soft">Emotional Resilience</span>
-        <span class="skill-tag soft">Collaboration</span>
-        <span class="skill-tag soft">Event Management</span>
-        <span class="skill-tag soft">Public Outreach</span>
+
+      <div class="exp-entry">
+        <div class="exp-left">
+          <span class="exp-date-tag">MAY – AUG 2024</span>
+          <div class="exp-co-name">Broomling Technologies</div>
+          <span class="exp-badge" style="background:#dbeafe;color:#1d4ed8;">Digital Marketing</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role-title">⚡ Growth & Outreach Specialist</div>
+          <ul class="exp-pts">
+            <li>Ran automated email campaigns using Brevo and created targeted B2B lead lists through structured online research.</li>
+            <li>Handled client prospecting on Upwork and Freelancer, generating new business opportunities.</li>
+            <li>Improved Fiverr gig SEO strategy — measurable increase in inbound inquiries.</li>
+          </ul>
+        </div>
       </div>
-      <h4>✨ Hobbies</h4>
-      <div class="skill-tags">
-        <span class="skill-tag hobby">🎲 Rubik's Cube</span>
-        <span class="skill-tag hobby">🎨 Drawing</span>
-        <span class="skill-tag hobby">📚 Research</span>
+
+      <div class="exp-entry">
+        <div class="exp-left">
+          <span class="exp-date-tag">APR – MAY 2024</span>
+          <div class="exp-co-name">Ace Junctions</div>
+          <span class="exp-badge" style="background:#dcfce7;color:#16a34a;">Content & Social</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role-title">✍️ Content & Social Media Intern</div>
+          <ul class="exp-pts">
+            <li>Created social media creatives and wrote SEO-focused content for client websites under senior guidance.</li>
+            <li>Built and maintained a content calendar — helping the team plan tasks and meet deadlines efficiently.</li>
+          </ul>
+        </div>
       </div>
+
+      <div class="exp-entry">
+        <div class="exp-left">
+          <span class="exp-date-tag">2023 – 2024</span>
+          <div class="exp-co-name">E-Cell, Saraswati College</div>
+          <span class="exp-badge" style="background:#ede9fe;color:#7c3aed;">Leadership</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role-title">🌟 Overall Coordinator, E-Cell</div>
+          <ul class="exp-pts">
+            <li>Led a 21-member team to plan and execute 30+ events and workshops on entrepreneurship and career readiness.</li>
+            <li>Compiled annual reports and tracked event outcomes to assess performance and identify improvements.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-entry">
+        <div class="exp-left">
+          <span class="exp-date-tag">2025</span>
+          <div class="exp-co-name">BIZNOVA Fest</div>
+          <span class="exp-badge" style="background:#ffedd5;color:#c2410c;">Event Direction</span>
+        </div>
+        <div class="exp-right">
+          <div class="exp-role-title">🎪 Fest Director</div>
+          <ul class="exp-pts">
+            <li>Led 20-member team for multi-event management fest; introduced Stock Market Simulation & signed MoU with StockGro.</li>
+            <li>Attracted 150+ inter-college participants through focused outreach.</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
-</section>
 
-<div class="ruled-divider"><span>✦ ✦ ✦</span></div>
+  <!-- RULED DIVIDER -->
+  <div class="ruled-divider"><span class="ruled-label">✦ ✦ ✦</span></div>
 
-<section id="experience">
-  <div class="tape-row"><span class="tape red">Experience & Roles 💼</span></div>
-  <div class="exp-card hard-shadow reveal">
-    <div class="exp-header">Where I've Worked & Led</div>
-
-    <div class="exp-entry">
-      <div class="exp-side">
-        <div class="exp-date">May–Aug '24</div>
-        <div class="exp-company">Broomling Tech</div>
-        <span class="exp-type">Digital Marketing</span>
-      </div>
-      <div class="exp-content">
-        <h4 class="exp-role">Growth & Outreach Specialist</h4>
-        <ul>
-          <li>Automated email campaigns via Brevo + B2B lead lists</li>
-          <li>Client prospecting on Upwork and Freelancer</li>
-          <li>Improved Fiverr gig SEO — measurable increase in inbound</li>
-        </ul>
-      </div>
+  <!-- ═══ ACHIEVEMENTS ═══ -->
+  <div id="achievements" style="padding-top:1rem;">
+    <div class="reveal" style="margin-bottom:1.5rem;">
+      <span class="tape-label purple-tape">Achievements & Wins</span>
     </div>
-
-    <div class="exp-entry">
-      <div class="exp-side">
-        <div class="exp-date">Apr–May '24</div>
-        <div class="exp-company">Ace Junctions</div>
-        <span class="exp-type">Content & Social</span>
-      </div>
-      <div class="exp-content">
-        <h4 class="exp-role">Content & Social Media Intern</h4>
-        <ul>
-          <li>SEO-focused content for client websites</li>
-          <li>Social media creatives</li>
-          <li>Built content calendar for team planning</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-entry">
-      <div class="exp-side">
-        <div class="exp-date">2023–2024</div>
-        <div class="exp-company">Saraswati College</div>
-        <span class="exp-type">Leadership</span>
-      </div>
-      <div class="exp-content">
-        <h4 class="exp-role">Founder & Chairman, E-Cell</h4>
-        <ul>
-          <li>Led 21-member executive team</li>
-          <li>Planned and executed 30+ events and workshops</li>
-          <li>Compiled annual reports, tracked outcomes</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="exp-entry">
-      <div class="exp-side">
-        <div class="exp-date">2025</div>
-        <div class="exp-company">BIZNOVA Fest</div>
-        <span class="exp-type">Event Direction</span>
-      </div>
-      <div class="exp-content">
-        <h4 class="exp-role">Fest Director</h4>
-        <ul>
-          <li>Led 20-member team, multi-event management fest</li>
-          <li>Introduced Stock Market Simulation + Business Plan Competition</li>
-          <li>MoU with StockGro · 150+ inter-college participants</li>
-        </ul>
-      </div>
+    <div class="ach-grid">
+      <div class="ach-note reveal"><div class="ach-note-top" style="background:#3b82f6;"></div><div class="ach-note-body"><span class="ach-icon">🏆</span><div class="ach-yr" style="color:#3b82f6;">2025</div><div class="ach-title">Student of the Year</div><div class="ach-desc">Ranked 1st across BBA, BCA & MCA — 3-stage selection at Saraswati College.</div></div></div>
+      <div class="ach-note reveal"><div class="ach-note-top" style="background:#ca8a04;"></div><div class="ach-note-body"><span class="ach-icon">📄</span><div class="ach-yr" style="color:#ca8a04;">2024</div><div class="ach-title">Published in IJFMR</div><div class="ach-desc">Solo author: AR impact on retail marketing. Reduces returns, improves decisions.</div></div></div>
+      <div class="ach-note reveal"><div class="ach-note-top" style="background:#16a34a;"></div><div class="ach-note-body"><span class="ach-icon">💡</span><div class="ach-yr" style="color:#16a34a;">2024</div><div class="ach-title">IIT Bombay — Illuminate</div><div class="ach-desc">81 paid registrations · ₹52,000 raised · Zero marketing spend.</div></div></div>
+      <div class="ach-note reveal"><div class="ach-note-top" style="background:#dc2626;"></div><div class="ach-note-body"><span class="ach-icon">🚀</span><div class="ach-yr" style="color:#dc2626;">2023–24</div><div class="ach-title">NEC National Rankings</div><div class="ach-desc">Top 20 (2023) & Top 50 (2024) — National Entrepreneurship Challenge.</div></div></div>
+      <div class="ach-note reveal"><div class="ach-note-top" style="background:#7c3aed;"></div><div class="ach-note-body"><span class="ach-icon">🎯</span><div class="ach-yr" style="color:#7c3aed;">2024</div><div class="ach-title">Eureka — IIT Bombay</div><div class="ach-desc">Top 600 out of ~25,000 national teams. Zonal qualifier.</div></div></div>
+      <div class="ach-note reveal"><div class="ach-note-top" style="background:#c2410c;"></div><div class="ach-note-body"><span class="ach-icon">🥇</span><div class="ach-yr" style="color:#c2410c;">2023</div><div class="ach-title">NextgenExpo — 1st Place</div><div class="ach-desc">Won national-level business plan competition among 34 teams.</div></div></div>
+      <div class="ach-note reveal"><div class="ach-note-top" style="background:#0f766e;"></div><div class="ach-note-body"><span class="ach-icon">🎨</span><div class="ach-yr" style="color:#0f766e;">2023</div><div class="ach-title">Parishkriti — 1st Place</div><div class="ach-desc">National-level poster-making competition, 1st among 20 participants.</div></div></div>
+      <div class="ach-note reveal"><div class="ach-note-top" style="background:#be185d;"></div><div class="ach-note-body"><span class="ach-icon">🎪</span><div class="ach-yr" style="color:#be185d;">2025</div><div class="ach-title">BIZNOVA — Fest Director</div><div class="ach-desc">MoU with StockGro · 20-member team · 150+ inter-college participants.</div></div></div>
     </div>
   </div>
-</section>
 
-<div class="ruled-divider"><span>✦ ✦ ✦</span></div>
+  <!-- RULED DIVIDER -->
+  <div class="ruled-divider"><span class="ruled-label">✦ ✦ ✦</span></div>
 
-<section id="achievements">
-  <div class="tape-row"><span class="tape purple">Achievements & Wins 🏆</span></div>
-  <div class="ach-grid" id="achGrid">
-    <div class="ach-note hard-shadow reveal"><div class="ach-bar" style="background:var(--blue)"></div><div class="ach-body">
-      <div class="ach-icon">🏆</div><div class="ach-year">2025</div>
-      <div class="ach-title">Student of the Year</div>
-      <div class="ach-desc">Ranked 1st across BBA, BCA & MCA at Saraswati College after a three-stage selection process.</div>
-    </div></div>
-    <div class="ach-note hard-shadow reveal"><div class="ach-bar" style="background:var(--yellow)"></div><div class="ach-body">
-      <div class="ach-icon">📄</div><div class="ach-year">2024</div>
-      <div class="ach-title">Published in IJFMR</div>
-      <div class="ach-desc">Solo author: AR's impact on retail marketing. Found AR reduces returns & improves decisions.</div>
-    </div></div>
-    <div class="ach-note hard-shadow reveal"><div class="ach-bar" style="background:var(--green)"></div><div class="ach-body">
-      <div class="ach-icon">🎪</div><div class="ach-year">2025</div>
-      <div class="ach-title">BIZNOVA Fest Director</div>
-      <div class="ach-desc">Led 20 members · MoU with StockGro · 150+ participants. Introduced 3 flagship events.</div>
-    </div></div>
-    <div class="ach-note hard-shadow reveal"><div class="ach-bar" style="background:var(--orange)"></div><div class="ach-body">
-      <div class="ach-icon">💡</div><div class="ach-year">2024</div>
-      <div class="ach-title">IIT Bombay — Illuminate</div>
-      <div class="ach-desc">Team Lead. 81 paid registrations · ₹52,000 raised. Zero marketing spend.</div>
-    </div></div>
-    <div class="ach-note hard-shadow reveal"><div class="ach-bar" style="background:var(--red)"></div><div class="ach-body">
-      <div class="ach-icon">🚀</div><div class="ach-year">2023–24</div>
-      <div class="ach-title">NEC National Rankings</div>
-      <div class="ach-desc">Top 20 (2023) · Top 50 (2024). National Entrepreneurship Challenge · 6-month eval.</div>
-    </div></div>
-    <div class="ach-note hard-shadow reveal"><div class="ach-bar" style="background:var(--purple)"></div><div class="ach-body">
-      <div class="ach-icon">🎯</div><div class="ach-year">2024</div>
-      <div class="ach-title">Eureka — IIT Bombay</div>
-      <div class="ach-desc">Top 600 out of ~25,000 teams nationwide. Zonal qualifier.</div>
-    </div></div>
-    <div class="ach-note hard-shadow reveal"><div class="ach-bar" style="background:var(--teal)"></div><div class="ach-body">
-      <div class="ach-icon">🥇</div><div class="ach-year">2023</div>
-      <div class="ach-title">NextgenExpo — 1st Place</div>
-      <div class="ach-desc">Won national-level business plan competition among 34 competing teams.</div>
-    </div></div>
-    <div class="ach-note hard-shadow reveal"><div class="ach-bar" style="background:var(--pink)"></div><div class="ach-body">
-      <div class="ach-icon">🎨</div><div class="ach-year">2023</div>
-      <div class="ach-title">Parishkriti — 1st Place</div>
-      <div class="ach-desc">National-level poster-making competition. 1st among 20 participants.</div>
-    </div></div>
-  </div>
-</section>
-
-<div class="ruled-divider"><span>✦ ✦ ✦</span></div>
-
-<section id="projects">
-  <div class="tape-row"><span class="tape purple">My Projects & Work 🗂️</span></div>
-  <div class="carousel-wrap">
-    <button class="car-btn car-prev" aria-label="Previous">◁</button>
-    <div class="carousel-viewport"><div class="carousel-track" id="carTrack">
-
-      <a class="proj-card hard-shadow" href="https://docs.google.com/spreadsheets/d/1owx06kAwwNEsSo-Z1-ev2iNI8dAsKEAf/edit?usp=sharing&ouid=108275781395392805023&rtpof=true&sd=true" target="_blank" rel="noopener">
-        <div class="proj-bar" style="background:var(--yellow)"></div>
-        <div class="proj-preview" style="background:var(--paper); display:flex; align-items:center; justify-content:center; font-size:4rem;">
-          🔑
-          <div class="proj-overlay"><span>🔗 View Product →</span></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">📦 E-Commerce</div>
-          <div class="proj-name">HOM CLICKERX</div>
-          <div class="proj-desc">Founded an e-commerce brand specializing in mechanical fidget keychains that simulate tactile keyboard switch sensations. Managed end-to-end operations to Meesho marketplace listing.</div>
-          <div class="proj-tags"><span>Operations</span><span>Market Research</span></div>
-        </div>
-      </a>
-
-      <a class="proj-card hard-shadow" href="https://docs.google.com/spreadsheets/d/1MT5FWKcB5DAXQYJUY_KvIux-NTuspm-HWm0Zx3IRfZs/edit?usp=sharing" target="_blank" rel="noopener">
-        <div class="proj-bar" style="background:var(--green)"></div>
-        <div class="proj-preview">
-          <iframe src="https://docs.google.com/spreadsheets/d/1MT5FWKcB5DAXQYJUY_KvIux-NTuspm-HWm0Zx3IRfZs/preview" loading="lazy"></iframe>
-          <div class="proj-overlay"><span>🔗 Open →</span></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">📁 Excel Dashboard</div>
-          <div class="proj-name">Exam Prep Hub</div>
-          <div class="proj-desc">AI-assisted Excel sheet with interactive dashboard for exam preparation — topics, progress, scores, schedule tracking.</div>
-          <div class="proj-tags"><span>Excel</span><span>AI-assisted</span><span>Study Planning</span></div>
-        </div>
-      </a>
-
-      <a class="proj-card hard-shadow" href="https://trace-buddy-art.lovable.app" target="_blank" rel="noopener">
-        <div class="proj-bar" style="background:var(--purple)"></div>
-        <div class="proj-preview">
-          <iframe src="https://trace-buddy-art.lovable.app" loading="lazy"></iframe>
-          <div class="proj-overlay"><span>🔗 Open →</span></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">📱 App Tool</div>
-          <div class="proj-name">Trace Buddy</div>
-          <div class="proj-desc">Mobile app overlaying reference photo on camera with adjustable brightness — trace drawings precisely using your phone.</div>
-          <div class="proj-tags"><span>Mobile App</span><span>UI/UX</span><span>Drawing Aid</span></div>
-        </div>
-      </a>
-
-      <a class="proj-card hard-shadow" href="https://kohost.lovable.app" target="_blank" rel="noopener">
-        <div class="proj-bar" style="background:var(--blue)"></div>
-        <div class="proj-preview">
-          <iframe src="https://kohost.lovable.app" loading="lazy"></iframe>
-          <div class="proj-overlay"><span>🔗 Open →</span></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">💻 Event Tech</div>
-          <div class="proj-name">Kohost Platform</div>
-          <div class="proj-desc">All-in-one student event platform: sponsorship management, judges, live leaderboard, co-host coordination, participants.</div>
-          <div class="proj-tags"><span>Platform Mgmt</span><span>Leaderboard</span></div>
-        </div>
-      </a>
-
-      <a class="proj-card hard-shadow" href="https://docs.google.com/presentation/d/1a6c1fTDksPrCCAVSKj3yNtZeKXwt7Suw/edit?usp=sharing" target="_blank" rel="noopener">
-        <div class="proj-bar" style="background:var(--red)"></div>
-        <div class="proj-preview">
-          <iframe src="https://docs.google.com/presentation/d/1a6c1fTDksPrCCAVSKj3yNtZeKXwt7Suw/preview" loading="lazy"></iframe>
-          <div class="proj-overlay"><span>🔗 Open →</span></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">📊 PPT Pitch</div>
-          <div class="proj-name">Business Plan PPT</div>
-          <div class="proj-desc">National-level business plan competition presentation. Won 1st place among 34 competing teams at NextgenExpo.</div>
-          <div class="proj-tags"><span>Strategy</span><span>🥇 1st Place</span></div>
-        </div>
-      </a>
-
-      <a class="proj-card hard-shadow" href="https://docs.google.com/presentation/d/17ecAIDH674WyR7eieFeRJhXiksLYa2pg/edit?usp=sharing" target="_blank" rel="noopener">
-        <div class="proj-bar" style="background:var(--teal)"></div>
-        <div class="proj-preview">
-          <iframe src="https://docs.google.com/presentation/d/17ecAIDH674WyR7eieFeRJhXiksLYa2pg/preview" loading="lazy"></iframe>
-          <div class="proj-overlay"><span>🔗 Open →</span></div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat">📊 PPT Pitch</div>
-          <div class="proj-name">Eureka Deck</div>
-          <div class="proj-desc">Business model competition submission for Eureka at IIT Bombay. Reached Top 600 out of ~25,000 entries nationwide.</div>
-          <div class="proj-tags"><span>IIT Bombay</span><span>Top 600</span></div>
-        </div>
-      </a>
-
-    </div></div>
-    <button class="car-btn car-next" aria-label="Next">▷</button>
-    <div class="car-dots" id="carDots"></div>
-  </div>
-</section>
-
-<div class="ruled-divider"><span>✦ ✦ ✦</span></div>
-
-<section id="courses">
-  <div class="tape-row"><span class="tape amber">Certifications & Courses 🎓</span></div>
-  <div class="courses">
-    <div class="course-pill hard-shadow reveal-scale">
-      <div class="course-ico" style="background:#4285f4; color: #fff;">G</div>
-      <div class="course-info"><b>Google Digital Marketing & E-commerce</b><small>Coursera Professional Certificate</small></div>
+  <!-- ═══ CONTACT ═══ -->
+  <div id="contact" style="padding-top:1rem;padding-bottom:3rem;">
+    <div class="reveal" style="margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <span class="tape-label">Contact Me</span>
+      <span class="dont-forget" style="transform:rotate(1deg);">🌐 Let's connect!</span>
     </div>
-    <div class="course-pill hard-shadow reveal-scale">
-      <div class="course-ico" style="background:#0077b5; color: #fff;">📊</div>
-      <div class="course-info"><b>Introduction to Financial Analysis</b><small>Coursera Certificate</small></div>
-    </div>
-    <div class="course-pill hard-shadow reveal-scale">
-      <div class="course-ico" style="background:#e67e22; color: #fff;">💡</div>
-      <div class="course-info"><b>Developing Innovative Ideas</b><small>Coursera — Entrepreneurship</small></div>
-    </div>
-  </div>
-</section>
-
-<div class="ruled-divider"><span>✦ ✦ ✦</span></div>
-
-<section id="contact">
-  <div class="tape-row">
-    <span class="tape blue">Contact Me 📬</span>
-  </div>
-  <div class="contact-grid">
-    <div class="contact-left hard-shadow reveal-l">
-      <h2>Say hello! 👋 <br/>Let's work together.</h2>
-      <p class="sub">Open to marketing roles, collabs, and great conversations.</p>
-      <div class="contact-links">
-        <a class="contact-link" href="mailto:vedantpande0704@gmail.com">📧 vedantpande0704@gmail.com</a>
-        <a class="contact-link" href="tel:+917820894823">📱 +91 78208 94823</a>
-        <a class="contact-link" href="https://wa.me/917820894823" target="_blank" rel="noopener">💬 WhatsApp — Chat Now</a>
-        <a class="contact-link" href="https://www.linkedin.com/in/vedant-pande-digital-marketing/" target="_blank" rel="noopener">🔗 LinkedIn Profile</a>
-        <a class="contact-link" href="https://www.instagram.com/vedantpande070/" target="_blank" rel="noopener">📸 @vedantpande070</a>
-        <div class="contact-link" style="cursor:default;">📍 Khamgaon, Maharashtra</div>
+    <div class="contact-scrap">
+      <div class="contact-card reveal-l">
+        <div class="contact-title">Say hello! 👋<br/>Let's work together.</div>
+        <p class="contact-sub">Open to marketing roles, collabs, and great conversations.</p>
+        <a class="c-row" href="mailto:vedantpande0704@gmail.com"><span class="c-row-icon">📧</span>vedantpande0704@gmail.com</a>
+        <a class="c-row" href="tel:+917820894823"><span class="c-row-icon">📱</span>+91 78208 94823</a>
+        <a class="c-row" href="https://wa.me/917820894823" target="_blank" rel="noopener"><span class="c-row-icon">💬</span>WhatsApp — Chat Now</a>
+        <a class="c-row" href="https://www.linkedin.com/in/vedant-pande-digital-marketing/" target="_blank" rel="noopener"><span class="c-row-icon">🔗</span>LinkedIn Profile</a>
+        <a class="c-row" href="https://www.instagram.com/vedantpande070/" target="_blank" rel="noopener"><span class="c-row-icon">📸</span>@vedantpande070</a>
+        <div class="c-row"><span class="c-row-icon">📍</span>Khamgaon, Maharashtra</div>
+        <div style="margin-top:1.2rem;">
+          <div class="sticky">✨ <em>"Systematically creative — Rubik's cube solver, artist, and marketer."</em></div>
+        </div>
       </div>
-      <div class="contact-note">✨ Systematically creative — Rubik's cube solver, artist, and marketer.</div>
-    </div>
 
-    <div class="contact-right hard-shadow reveal-r">
-      <div class="cr-header">Drop me a message! ✍️</div>
-      <form id="contactForm" action="https://formsubmit.co/vedantpande0704@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="New Portfolio Message!"/>
-        <input type="hidden" name="_captcha" value="false"/>
-        <input type="hidden" name="_template" value="table"/>
-        <label for="cf-name">Your name</label>
-        <input id="cf-name" name="name" type="text" required placeholder="What should I call you?"/>
-        <label for="cf-email">Your email</label>
-        <input id="cf-email" name="email" type="email" required placeholder="you@example.com"/>
-        <label for="cf-msg">Your message</label>
-        <textarea id="cf-msg" name="message" required placeholder="Say hi, share an idea, or pitch a project..."></textarea>
-        <button class="send-btn" type="submit" id="sendBtn">Send Message →</button>
-      </form>
-      <div class="success-card" id="successCard">
-        <div class="emoji">🎉</div>
-        <h3>Message sent!</h3>
-        <p>I'll get back to you soon!</p>
+      <div class="contact-form-card reveal-r">
+        <div class="form-top">✉️ Drop me a message!</div>
+        <div class="form-body">
+          <div id="the-form">
+            <div class="fg"><label>Your name</label><input type="text" id="fname" placeholder="Your name..."/></div>
+            <div class="fg"><label>Email address</label><input type="email" id="femail" placeholder="your@email.com"/></div>
+            <div class="fg"><label>Message</label><textarea id="fmsg" placeholder="What's on your mind?"></textarea></div>
+            <button class="btn-send" id="send-btn" type="submit">Send Message →</button>
+          </div>
+          <div class="form-success" id="success-msg">
+            <span class="fs-icon">🎉</span>
+            <div class="fs-title">Message sent!</div>
+            <p class="fs-sub">I'll get back to you soon. Thanks for reaching out!</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
-</section>
 
-</main>
+</div><!-- /page -->
 
-<footer>
-  <div class="logo">VP.</div>
-  <div class="easter">P.S. I can also solve a Rubik's cube. <span class="cube">🎲</span></div>
-  <div style="opacity:.8; font-family:'Fredoka One', cursive; font-size:0.9rem;">© 2026 · BBA Graduate · Khamgaon, MH</div>
+<footer class="site-footer">
+  <span class="footer-logo">✏️ Vedant Pande</span>
+  <p>© 2025 · BBA Graduate · Khamgaon, Maharashtra</p>
 </footer>
 
-<script src="script.js"></script>
-
-
-<style>
-  /* Admin Bar */
-  #vp-admin-bar {
-    display: none; position: fixed; top: 0; left: 0; right: 0; height: 60px;
-    background: #1a1a2e; color: #f5f0e8; z-index: 99999;
-    font-family: 'Nunito', sans-serif; align-items: center; justify-content: space-between;
-    padding: 0 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-bottom: 3px solid #3b82f6;
-  }
-  #vp-admin-bar .badge {
-    background: #a78bfa; color: #1a1a2e; padding: 4px 10px; border-radius: 4px;
-    font-family: 'Fredoka One', cursive; font-size: 0.9rem; border: 2px solid #1a1a2e;
-  }
-  #vp-admin-bar .hint { font-size: 0.85rem; opacity: 0.8; font-weight: 700; text-align: center; flex: 1; }
-  #vp-admin-bar .actions { display: flex; gap: 10px; align-items: center; }
-  #vp-admin-bar button {
-    background: transparent; color: #f5f0e8; border: 2px solid #f5f0e8; padding: 5px 12px;
-    border-radius: 6px; font-weight: 800; cursor: pointer; transition: all 0.2s;
-  }
-  #vp-admin-bar button:hover { background: #f5f0e8; color: #1a1a2e; }
-  #vp-admin-bar button.btn-save { background: #fde047; color: #1a1a2e; border-color: #fde047; }
-  #vp-admin-bar button.btn-save:hover { filter: brightness(0.9); }
-  #vp-admin-bar button.btn-del { color: #f87171; border-color: #f87171; display: none; }
-  #vp-admin-bar button.btn-del:hover { background: #f87171; color: #1a1a2e; }
-  #vp-admin-bar button.btn-dup { color: #4ade80; border-color: #4ade80; display: none; }
-  #vp-admin-bar button.btn-dup:hover { background: #4ade80; color: #1a1a2e; }
-
-  /* Login Modal */
-  #vp-login-modal {
-    display: none; position: fixed; inset: 0; background: rgba(26,26,46,0.8);
-    backdrop-filter: blur(8px); z-index: 100000; align-items: center; justify-content: center;
-  }
-  .vp-login-card {
-    background: #ffffff; padding: 40px; border-radius: 12px; width: 100%; max-width: 400px;
-    border: 4px solid #1a1a2e; box-shadow: 12px 12px 0 #1a1a2e; text-align: center;
-  }
-  .vp-login-card h2 { font-family: 'Fredoka One', cursive; color: #1a1a2e; margin-bottom: 20px; font-size: 2rem; }
-  .vp-login-card input {
-    width: 100%; padding: 12px; margin-bottom: 15px; border: 3px solid #1a1a2e; border-radius: 6px;
-    font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 1rem;
-  }
-  .vp-login-card button {
-    width: 100%; padding: 12px; background: #3b82f6; color: #fff; font-family: 'Fredoka One', cursive;
-    font-size: 1.2rem; border: 3px solid #1a1a2e; border-radius: 6px; cursor: pointer; box-shadow: 4px 4px 0 #1a1a2e; transition: transform 0.1s;
-  }
-  .vp-login-card button:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #1a1a2e; }
-  .vp-error { color: #dc2626; font-weight: 800; font-family: 'Nunito', sans-serif; margin-top: 15px; display: none; }
-
-  /* Toast Notification */
-  #vp-toast {
-    position: fixed; bottom: 30px; right: 30px; padding: 12px 24px; border-radius: 6px;
-    font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: #1a1a2e; z-index: 100001;
-    border: 3px solid #1a1a2e; box-shadow: 6px 6px 0 #1a1a2e;
-    opacity: 0; transform: translateY(20px); transition: all 0.3s ease; pointer-events: none;
-  }
-  #vp-toast.show { opacity: 1; transform: translateY(0); }
-  #vp-toast.success { background: #4ade80; }
-  #vp-toast.error { background: #f87171; }
-
-  /* Edit Mode Visual Feedback */
-  body.vp-edit-active { padding-top: 60px !important; }
-  body.vp-edit-active nav { top: 60px !important; }
-  body.vp-edit-active main, body.vp-edit-active .marquee { outline: 3px dashed #a78bfa; outline-offset: 4px; position: relative;}
-  
-  /* Editable Text Feedback */
-  body.vp-edit-active [contenteditable="true"] { transition: all 0.2s; outline: 2px solid transparent; border-radius: 4px; }
-  body.vp-edit-active [contenteditable="true"]:hover { outline: 2px dashed #a78bfa; background: rgba(167, 139, 250, 0.1); cursor: text; }
-  body.vp-edit-active [contenteditable="true"]:focus { outline: 3px solid #3b82f6; background: rgba(253, 224, 71, 0.3); }
-  
-  /* Image Feedback */
-  body.vp-edit-active img { outline: 3px dashed #4ade80; cursor: pointer; transition: all 0.2s; }
-  body.vp-edit-active img:hover { outline: 4px solid #4ade80; filter: brightness(0.8); }
-
-  /* Selected Card Feedback */
-  .vp-card-selectable { cursor: crosshair; }
-  .vp-selected-card { outline: 4px solid #f87171 !important; box-shadow: 0 0 15px rgba(248,113,113,0.6) !important; position: relative; z-index: 99; transform: scale(1.02); transition: all 0.2s; }
-</style>
-
-<div id="vp-admin-bar">
-  <div class="badge">Admin · Edit Mode</div>
-  <div class="hint">Click text to edit · <b>Right-click a link to change URL</b> · Click image to replace</div>
-  <div class="actions">
-    
-    <select id="vp-font-picker" title="Change Font" style="background: transparent; color: #f5f0e8; border: 2px solid #f5f0e8; padding: 4px 8px; border-radius: 6px; font-weight: 700; outline: none; cursor: pointer; font-family: 'Nunito', sans-serif;">
-      <option value="" style="color:#1a1a2e;">Font ✎</option>
-      <option value="'Nunito', sans-serif" style="color:#1a1a2e; font-family:'Nunito', sans-serif;">Nunito</option>
-      <option value="'Fredoka One', cursive" style="color:#1a1a2e; font-family:'Fredoka One', cursive;">Fredoka</option>
-      <option value="'Caveat', cursive" style="color:#1a1a2e; font-family:'Caveat', cursive;">Caveat</option>
-    </select>
-
-    <button class="btn-dup" id="vp-btn-dup" title="Duplicate selected item">⧉ Duplicate</button>
-    <button class="btn-del" id="vp-btn-del" title="Delete selected item">🗑 Delete</button>
-    <button class="btn-save" id="vp-btn-save">💾 Save</button>
-    <button id="vp-btn-reset">↺ Reset</button>
-    <button id="vp-btn-exit">Exit</button>
-  </div>
-</div>
-
-<div id="vp-login-modal">
-  <div class="vp-login-card">
-    <h2>Admin Login</h2>
-    <input type="email" id="vp-email" placeholder="Email" autocomplete="off" />
-    <input type="password" id="vp-pass" placeholder="Password" />
-    <button id="vp-btn-login">Enter Vault</button>
-    <div class="vp-error" id="vp-error-msg">Invalid email or password.</div>
-  </div>
-</div>
-
-<div id="vp-toast">Message</div>
-<input type="file" id="vp-image-upload" accept="image/*" style="display:none;" />
-
 <script>
-(function() {
-  // --- 1. PERSISTENCE BOOTSTRAP (Runs on every page load) ---
-  const storedMains = localStorage.getItem('vp_saved_mains');
-  const mainContainers = document.querySelectorAll('main, .marquee');
-  
-  if (storedMains) {
-    try {
-      const parsedHTML = JSON.parse(storedMains);
-      mainContainers.forEach((container, i) => {
-        if(parsedHTML[i]) container.innerHTML = parsedHTML[i];
-      });
-    } catch(e) { console.error("Admin: Error restoring saved content.", e); }
+// Scroll reveal
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(r=>io.observe(r));
+
+// ─────────────────────────────────────────────────────────────
+// FORMSPREE SETUP:
+//  1. Go to https://formspree.io — sign up FREE
+//  2. New Form → copy your Form ID (e.g. "xpwzabcd")
+//  3. Replace YOUR_FORM_ID below
+// ─────────────────────────────────────────────────────────────
+const FORMSPREE_ID="YOUR_FORM_ID"; // 👈 replace this
+
+async function submitForm(){
+  const n=document.getElementById('fname').value.trim();
+  const em=document.getElementById('femail').value.trim();
+  const m=document.getElementById('fmsg').value.trim();
+  if(!n||!em||!m){alert('Please fill in all fields! 😊');return;}
+  const btn=document.getElementById('send-btn');
+  btn.textContent='Sending...';btn.disabled=true;
+  if(FORMSPREE_ID==="YOUR_FORM_ID"){
+    setTimeout(()=>{document.getElementById('the-form').style.display='none';document.getElementById('success-msg').style.display='block';},800);
+    return;
   }
-
-  // --- 2. ACTIVATION CHECK ---
-  if (window.location.hash !== '#admin') return;
-
-  // Configuration
-  const ADMIN_EMAIL = 'vedantpande0704@gmail.com';
-  const ADMIN_PASS = 'vedant@9763';
-  const SESSION_KEY = 'vp_admin_session';
-  
-  // TEXT CLASSES: Now includes "b" (bold text) and ".course-ico" (the Course icons)
-  const TEXT_SELECTORS = 'h1, h2, h3, h4, h5, h6, p, span, li, a, strong, em, small, label, b, .course-ico, .ach-icon, .ach-year, .ach-title, .ach-desc, .hi, .stat-num, .stat-lbl, .edu-year, .edu-school, .edu-degree, .edu-grade, .exp-date, .exp-company, .proj-cat, .proj-name, .proj-desc, .cr-header, .contact-note';
-  
-  const CARD_SELECTORS = '.proj-card, .exp-entry, .ach-note, .stat, .course-pill, .skill-tag, .edu-entry, .contact-link';
-  
-  // Elements
-  const modal = document.getElementById('vp-login-modal');
-  const emailInput = document.getElementById('vp-email');
-  const passInput = document.getElementById('vp-pass');
-  const loginBtn = document.getElementById('vp-btn-login');
-  const errorMsg = document.getElementById('vp-error-msg');
-  const adminBar = document.getElementById('vp-admin-bar');
-  const toastEl = document.getElementById('vp-toast');
-  const fileInput = document.getElementById('vp-image-upload');
-  
-  const btnSave = document.getElementById('vp-btn-save');
-  const btnReset = document.getElementById('vp-btn-reset');
-  const btnExit = document.getElementById('vp-btn-exit');
-  const btnDup = document.getElementById('vp-btn-dup');
-  const btnDel = document.getElementById('vp-btn-del');
-  const fontPicker = document.getElementById('vp-font-picker');
-
-  let selectedElement = null;
-  let targetImage = null;
-
-  // --- 3. TOAST NOTIFICATION SYSTEM ---
-  let toastTimeout;
-  function showToast(msg, isSuccess = true) {
-    toastEl.textContent = msg;
-    toastEl.className = isSuccess ? 'success show' : 'error show';
-    clearTimeout(toastTimeout);
-    toastTimeout = setTimeout(() => { toastEl.className = ''; }, 2400);
-  }
-
-  // --- 4. AUTHENTICATION ---
-  if (sessionStorage.getItem(SESSION_KEY) === 'active') {
-    initEditMode();
-  } else {
-    modal.style.display = 'flex';
-  }
-
-  loginBtn.addEventListener('click', () => {
-    if (emailInput.value.trim() === ADMIN_EMAIL && passInput.value === ADMIN_PASS) {
-      sessionStorage.setItem(SESSION_KEY, 'active');
-      modal.style.display = 'none';
-      showToast('Login Successful! Welcome back.');
-      initEditMode();
-    } else {
-      errorMsg.style.display = 'block';
-    }
-  });
-
-  // --- 5. CORE EDIT MODE LOGIC ---
-  function initEditMode() {
-    document.body.classList.add('vp-edit-active');
-    adminBar.style.display = 'flex';
-
-    bindInteractions();
-
-    document.addEventListener('click', (e) => {
-      if(e.target.closest('a') && document.body.classList.contains('vp-edit-active')) {
-        e.preventDefault();
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-        e.preventDefault();
-        saveChanges();
-      }
-    });
-  }
-
-  function bindInteractions() {
-    mainContainers.forEach(container => {
-      // 1. Text elements
-      const texts = container.querySelectorAll(TEXT_SELECTORS);
-      texts.forEach(el => {
-        el.setAttribute('contenteditable', 'true');
-        el.setAttribute('spellcheck', 'false');
-      });
-
-      // 2. Images
-      const images = container.querySelectorAll('img');
-      images.forEach(img => {
-        if(!img.dataset.bound) {
-          img.dataset.bound = 'true';
-          img.addEventListener('click', (e) => {
-            e.stopPropagation();
-            targetImage = img;
-            fileInput.click();
-          });
-        }
-      });
-
-      // 3. Selectable Cards
-      const cards = container.querySelectorAll(CARD_SELECTORS);
-      cards.forEach(card => {
-        card.classList.add('vp-card-selectable');
-        if(!card.dataset.bound) {
-          card.dataset.bound = 'true';
-          card.addEventListener('click', (e) => {
-            if(e.target.tagName !== 'IMG' && !e.target.hasAttribute('contenteditable')) {
-              e.stopPropagation();
-              selectCard(card);
-            }
-          });
-        }
-      });
-      
-      // 4. Right-Click to Edit Links
-      const links = container.querySelectorAll('a');
-      links.forEach(link => {
-        if(!link.dataset.linkBound) {
-          link.dataset.linkBound = 'true';
-          link.addEventListener('contextmenu', (e) => {
-            if (!document.body.classList.contains('vp-edit-active')) return;
-            e.preventDefault(); 
-            e.stopPropagation(); 
-            
-            const currentHref = link.getAttribute('href') || '';
-            const newHref = prompt('🔗 Enter the new URL for this link:', currentHref);
-            
-            if (newHref !== null && newHref.trim() !== '') {
-              link.setAttribute('href', newHref.trim());
-              showToast('Link updated! (Remember to Save)');
-            }
-          });
-        }
-      });
-    });
-  }
-
-  // --- FONT PICKER LOGIC ---
-  fontPicker.addEventListener('change', (e) => {
-    const font = e.target.value;
-    if (!font) return;
-    
-    let applied = false;
-    
-    // Apply font to whatever text element the user clicked on
-    if (document.activeElement && document.activeElement.isContentEditable) {
-       document.activeElement.style.fontFamily = font;
-       applied = true;
-    } 
-    // Or apply font to an entire card if one is selected
-    else if (selectedElement) {
-       selectedElement.style.fontFamily = font;
-       applied = true;
-    }
-
-    if (applied) {
-       showToast('Font applied! (Remember to Save)');
-    } else {
-       showToast('Click some text or select a card first!', false);
-    }
-    
-    e.target.value = ''; // Reset dropdown to default
-  });
-
-  fileInput.addEventListener('change', function(e) {
-    const file = e.target.files[0];
-    if(!file) return;
-    if(file.size > 4 * 1024 * 1024) {
-      showToast('Image too large. Max 4MB.', false);
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = function(event) {
-      if(targetImage) {
-        targetImage.src = event.target.result;
-        showToast('Image replaced. (Remember to Save)');
-      }
-    };
-    reader.readAsDataURL(file);
-    fileInput.value = ''; 
-  });
-
-  function selectCard(card) {
-    if(selectedElement) selectedElement.classList.remove('vp-selected-card');
-    selectedElement = card;
-    selectedElement.classList.add('vp-selected-card');
-    btnDup.style.display = 'block';
-    btnDel.style.display = 'block';
-  }
-
-  document.addEventListener('click', (e) => {
-    if(selectedElement && !e.target.closest(CARD_SELECTORS) && !e.target.closest('#vp-admin-bar')) {
-      selectedElement.classList.remove('vp-selected-card');
-      selectedElement = null;
-      btnDup.style.display = 'none';
-      btnDel.style.display = 'none';
-    }
-  });
-
-  btnDup.addEventListener('click', () => {
-    if(!selectedElement) return;
-    const clone = selectedElement.cloneNode(true);
-    clone.classList.remove('vp-selected-card');
-    clone.removeAttribute('data-bound'); 
-    
-    clone.querySelectorAll('*').forEach(child => {
-      child.removeAttribute('data-bound');
-      child.removeAttribute('data-link-bound');
-    });
-    
-    selectedElement.parentNode.insertBefore(clone, selectedElement.nextSibling);
-    bindInteractions(); 
-    showToast('Card duplicated!');
-  });
-
-  btnDel.addEventListener('click', () => {
-    if(!selectedElement) return;
-    if(confirm("Are you sure you want to delete this element?")) {
-      selectedElement.remove();
-      selectedElement = null;
-      btnDup.style.display = 'none';
-      btnDel.style.display = 'none';
-      showToast('Element deleted.');
-    }
-  });
-
-  // --- 6. SAVE & SYSTEM ACTIONS ---
-  function saveChanges() {
-    if(selectedElement) selectedElement.classList.remove('vp-selected-card');
-    
-    const htmlToSave = Array.from(mainContainers).map(c => c.innerHTML);
-    
-    try {
-      localStorage.setItem('vp_saved_mains', JSON.stringify(htmlToSave));
-      showToast('Portfolio changes saved locally!');
-      if(selectedElement) selectedElement.classList.add('vp-selected-card');
-    } catch(e) {
-      if(e.name === 'QuotaExceededError') {
-         showToast('Storage full! Base64 images are too large.', false);
-      } else {
-         showToast('Error saving changes.', false);
-      }
-    }
-  }
-
-  btnSave.addEventListener('click', saveChanges);
-
-  btnReset.addEventListener('click', () => {
-    if(confirm("Reset all changes? This will restore the original website design. It cannot be undone.")) {
-      localStorage.removeItem('vp_saved_mains');
-      window.location.reload();
-    }
-  });
-
-  btnExit.addEventListener('click', () => {
-    sessionStorage.removeItem(SESSION_KEY);
-    history.replaceState(null, null, ' ');
-    window.location.reload();
-  });
-
-})();
+  try{
+    const res=await fetch(`https://formspree.io/f/${FORMSPREE_ID}`,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:n,email:em,message:m})});
+    if(res.ok){document.getElementById('the-form').style.display='none';document.getElementById('success-msg').style.display='block';}
+    else{const d=await res.json();alert('Oops! '+(d.error||'Something went wrong.'));btn.textContent='Send Message →';btn.disabled=false;}
+  }catch{alert('Network error. Try again!');btn.textContent='Send Message →';btn.disabled=false;}
+}
 </script>
 </body>
 </html>
